@@ -19,7 +19,7 @@ module Fkarta
                            hash_first_name: h(user.first_name),
                            hash_middle_name: h(user.middle_name),
                            hash_last_name: h(user.last_name),
-                           hash_birth_date: h(user.birth_date),
+                           hash_birth_date: h(d(user.birth_date)),
                            sex: user.gender == 'male' ? '1' : '2',
                            reason_request: '2'} do
               x.person_docs do
@@ -79,6 +79,10 @@ module Fkarta
 
       stribog = Stribog::CreateHash.new(string, :convert)
       stribog.(512).hex
+    end
+
+    def d(date)
+      date.strftime('%YYYY%MM%DD')
     end
   end
 
