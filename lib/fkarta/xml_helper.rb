@@ -28,7 +28,7 @@ module Fkarta
                             doc_type: '1', # Паспорт
                             hash_doc_serial: h(user.identity_document_number[0, 4]),
                             hash_doc_number: h(user.identity_document_number[4..-1]),
-                            hash_doc_issue_date: h(user.identity_document_issued_on),
+                            hash_doc_issue_date: h(d(user.identity_document_issued_on)),
                             doc_issue_auth: user.identity_document_issuer
                         }
               end
@@ -81,7 +81,7 @@ module Fkarta
       stribog.(512).hex
     end
 
-    def d(date)
+    def self.d(date)
       date.strftime('%YYYY%MM%DD')
     end
   end
