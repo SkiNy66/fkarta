@@ -85,7 +85,7 @@ module Fkarta
     end
 
     def self.d(date)
-      date.strftime('%YYYY%MM%DD')
+      date.strftime('%Y%m%d')
     end
   end
 
