@@ -7,13 +7,13 @@ class User
     @last_name = "Нугуманова"
     @middle_name = "Байбулатовна"
     @gender = "male"
-    @birth_date = "1986-03-22"
+    @birth_date = Date.parse("1986-03-22")
 
     @mobile_phone = "+7 (701) 055-1177"
 
     @identity_document = "gov_id_card"
     @identity_document_number = "039604633"
-    @identity_document_issued_on = "2016-01-13"
+    @identity_document_issued_on = Date.parse("2016-01-13")
     @identity_document_issuer = "ministry_of_internal_affairs"
     @iin = "860525400683"
   end

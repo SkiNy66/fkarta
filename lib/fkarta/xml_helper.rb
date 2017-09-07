@@ -50,8 +50,7 @@ module Fkarta
       }.to_xml.chomp
     end
 
-    def self.extract_rules(xml_string)
-      xml_doc  = Nokogiri::XML(xml_string)
+    def self.extract_rules(xml_doc)
       rules = []
 
       xml_doc.xpath('//rule').each do |rule|
@@ -65,6 +64,10 @@ module Fkarta
       end
 
       rules
+    end
+
+    def self.bad_response?(answer_message)
+      answer_message != 'No errors'
     end
 
     private
