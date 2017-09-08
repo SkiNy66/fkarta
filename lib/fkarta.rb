@@ -5,9 +5,6 @@ require 'fkarta/xml_helper'
 require 'fkarta/transliterator'
 require 'fkarta/config'
 
-require 'pry'
-
-
 module Fkarta
 
   def self.rules_by(user)
