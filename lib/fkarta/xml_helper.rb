@@ -36,10 +36,11 @@ module Fkarta
                         }
               end
               x.person_phones do
+                user_mobile_phone = user.mobile_phone.gsub!(/[^0-9]/, '')
                 x.phone '', { record_id: '1',
                               phone_type: '3',
-                              phone_country_code: '7',
-                              phone_number: user.mobile_phone.gsub!(/[0-9]/, '') }
+                              phone_country_code: user_mobile_phone[0],
+                              phone_number: user_mobile_phone}
               end
               x.person_cards do
                 x.card '', { record_id: user.cards.first.id,
@@ -55,7 +56,6 @@ module Fkarta
 
     def self.extract_rules(xml_doc)
       rules = []
-      p xml_doc
 
       xml_doc.xpath('//rule').each do |rule|
         attributes = {}
