@@ -1,5 +1,4 @@
 require 'net/https'
-require 'stribog'
 require 'nokogiri'
 
 module Fkarta

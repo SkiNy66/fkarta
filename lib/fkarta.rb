@@ -4,6 +4,7 @@ require 'fkarta/remoter'
 require 'fkarta/xml_helper'
 require 'fkarta/transliterator'
 require 'fkarta/config'
+require 'fkarta/stribog'
 
 module Fkarta
 

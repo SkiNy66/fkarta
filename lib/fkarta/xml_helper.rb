@@ -5,14 +5,17 @@ module Fkarta
   class XmlHelper
     def self.xml_for(user)
       root = Nokogiri::XML('<?xml version="1.0" encoding="utf-8"?>')
-      now = DateTime.now.strftime('%FT%T')
+      now = DateTime.now
 
       Nokogiri::XML::Builder.with(root) { |x|
         x.request '', { 'xmlns:xsd' => 'http://www.w3.org/2001/XMLSchema',
                         'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance',
                         id: '1',
-                        date: now,
+                        date: now.strftime('%FT%T'),
                         request_type: 'MFO'} do
+          x.check_hash '', { first_name: user.first_name,
+                             middle_name: user.middle_name,
+                             hash: h(user.first_name + user.middle_name) }
           x.person_data do
             x.person '', { record_id: user.id.to_s,
                            type: '1', # Заемщик
@@ -40,7 +43,7 @@ module Fkarta
               end
               x.person_cards do
                 x.card '', { record_id: user.cards.first.id,
-                             card_number: user.cards.first.masked_pan,
+                             card_number: user.cards.first.masked_pan.gsub(/\*/, 'x'),
                              # card_exp_date: "2019-01-01"
                          }
               end
@@ -52,6 +55,7 @@ module Fkarta
 
     def self.extract_rules(xml_doc)
       rules = []
+      p xml_doc
 
       xml_doc.xpath('//rule').each do |rule|
         attributes = {}
@@ -80,8 +84,7 @@ module Fkarta
       string = Unicode::upcase(string)
       string = Transliterator.transliterate string
 
-      stribog = Stribog::CreateHash.new(string, :convert)
-      stribog.(512).hex
+      Stribog.hex(string)
     end
 
     def self.d(date)
