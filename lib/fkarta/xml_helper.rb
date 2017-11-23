@@ -64,7 +64,11 @@ module Fkarta
           attributes[key.to_sym] = rule[key]
         end
 
-        rules << { rule['rule_name'] => attributes }
+        if rule['rule_name'].to_s.include?('Date') && attributes[:rule_value].length != 0
+          attributes[:rule_value] = Date.strptime(attributes[:rule_value], "%d.%m.%Y").strftime("%Y-%m-%d")
+        end
+
+        rules << { rule['rule_name'] => attributes.sort_by { |key, val| key }.to_h }
       end
 
       rules

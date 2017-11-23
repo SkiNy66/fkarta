@@ -1,0 +1,180 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://reqxml.f-karta.kz/prod/request.php
+    body:
+      encoding: UTF-8
+      string: |-
+        xml=<?xml version="1.0" encoding="utf-8"?>
+        <request xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="1" date="2017-11-24T00:00:00" request_type="MFO">
+          <check_hash first_name="Лаура" middle_name="Байбулатовна" hash="6103546c86d5405a8cdc73d2908d848310f8dcafd01847b0c5f64bf4b16bbb0e40da9ed808508d1d97373e32864e6cafa11582e4337428b7a7a0f3a7b531006d"/>
+          <person_data>
+            <person record_id="153" type="1" hash_first_name="15322bcfd34e7445eadf73a37be72b1006b84b2ca9a4c4c27cf2d5c7b6e95924d18d223fe65d51eb7f820eedef048d361a7ca2b598cdfb3794e1469daa856879" hash_middle_name="43812c19877752cf08a231db890cf4a4a4f3a0395c139f80230434f09ab6888f937f020edfac81c2cc81a601402826f81c60885abc80d06c0664376c65ef2e90" hash_last_name="b77bf732309a2c0bd9993cf3d94e54df0d30881ee1fe6e748b01fa0ead40f546ae872d2ca266f46fe4f3f53c1b941d91ec9411093550d39f6938654142fd690f" hash_birth_date="ee48b0bde8bdfbc359413a654be01b36964d9cd3427bdc497ccba2f56bddbd0dee2f37993feb249528a7b11c41281bc945fbe9991ec08f81d3d37482165ec0d2" sex="1" reason_request="2">
+              <person_docs>
+                <doc record_id="1" doc_type="1" hash_doc_serial="09d9442129341cb4b2cf879f5c4aeab24c5d6fca059fc7fd022513da7f1149f95802539ebf0703f930dd5a6f348222ab4958e99f03e5032a2a74a4ddeec14cd1" hash_doc_number="a83e01505df02550e8d60ee818942b35a2f02f5d42e7e8fffe69b5fa720877aa3ce29486eae3c4ff8ad1e2e8fb3f346d37df3985d80d8b9a80e6903bbf60db1d" hash_doc_issue_date="01b0f96aa7ff56720a6854a2d9f7f9d9d3fc41744a7ce557cdfaae05021c7235763b6f511bb4f321ecd74eb8589defd716a14e65c9a31603fad3e9855f170ec5" doc_issue_auth="ministry_of_internal_affairs"/>
+              </person_docs>
+              <person_phones>
+                <phone record_id="1" phone_type="3" phone_country_code="7" phone_number="77010551177"/>
+              </person_phones>
+              <person_cards>
+                <card record_id="47" card_number="4405xxxx05595569"/>
+              </person_cards>
+            </person>
+          </person_data>
+        </request>
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 23 Nov 2017 20:15:37 GMT
+      Server:
+      - Apache/2.4.29 (Red Hat) OpenSSL/1.0.2k-fips
+      Set-Cookie:
+      - PHPSESSID=20glto9ura4n95i4cvn20ao0qg45fsfk; path=/
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Disposition:
+      - attachment; filename="response_1511468138473.xml";filename*=utf-8''response_1511468138473.xml
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/xml
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><results request_id="1" processing_code="1000"><file
+        name="request_1511468138473_req.xml"><check_hash answer="Match" /><xsd answer="No
+        errors" /><response><person record_id="153"><rules><rule rule_id="1" level_1="M"
+        level_2="M50" level_3="" rule_name="cntTINcard" data_record_id="47" rule_flag="1"
+        rule_value="0" rule_date="2017-11-23 00:00:00" /><rule rule_id="2" level_1="M"
+        level_2="M52" level_3="" rule_name="CntAllTINUsers" data_record_id="" rule_flag="1"
+        rule_value="0" rule_date="2017-11-23 00:00:00" /><rule rule_id="3" level_1="M"
+        level_2="M49" level_3="" rule_name="cntcardpassport" data_record_id="47" rule_flag="1"
+        rule_value="2" rule_date="2017-11-23 00:00:00" /><rule rule_id="4" level_1="A"
+        level_2="A1" level_3="" rule_name="SA" data_record_id="" rule_flag="1" rule_value="2"
+        rule_date="2017-11-23 00:00:00" /><rule rule_id="5" level_1="M" level_2="M39"
+        level_3="" rule_name="CntAllPhonesUsers" data_record_id="" rule_flag="1" rule_value="2"
+        rule_date="2017-11-23 00:00:00" /><rule rule_id="6" level_1="M" level_2="M48"
+        level_3="" rule_name="CntAllPassportsUsers" data_record_id="" rule_flag="1"
+        rule_value="1" rule_date="2017-11-23 00:00:00" /><rule rule_id="7" level_1="A"
+        level_2="A1" level_3="A1.1" rule_name="FirstDateSA" data_record_id="" rule_flag="1"
+        rule_value="21.11.2017" rule_date="2017-11-23 00:00:00" /><rule rule_id="8"
+        level_1="M" level_2="M37" level_3="" rule_name="FirstDateUseCardSA" data_record_id="47"
+        rule_flag="1" rule_value="21.11.2017" rule_date="2017-11-23 00:00:00" /><rule
+        rule_id="9" level_1="I" level_2="I4" level_3="" rule_name="FirstDateUsePhoneSA"
+        data_record_id="1" rule_flag="1" rule_value="21.11.2017" rule_date="2017-11-23
+        00:00:00" /><rule rule_id="10" level_1="I" level_2="I3" level_3="I3.3" rule_name="Num_cellph_SP_90"
+        data_record_id="1" rule_flag="1" rule_value="1" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="11" level_1="I" level_2="I3" level_3="I3.4" rule_name="Num_cellph_SP_120"
+        data_record_id="1" rule_flag="1" rule_value="1" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="12" level_1="I" level_2="I3" level_3="I3.5" rule_name="Num_cellph_SP_180"
+        data_record_id="1" rule_flag="1" rule_value="1" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="13" level_1="I" level_2="I3" level_3="I3.6" rule_name="Num_cellph_SP_360"
+        data_record_id="1" rule_flag="1" rule_value="1" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="14" level_1="M" level_2="M23" level_3="M23.2" rule_name="NumCrdPhone_60"
+        data_record_id="1" rule_flag="1" rule_value="1" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="15" level_1="M" level_2="M37" level_3="" rule_name="CntCardUser_SameAp"
+        data_record_id="" rule_flag="1" rule_value="86" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="16" level_1="I" level_2="I3" level_3="I3.2" rule_name="Num_cellph_SP_60"
+        data_record_id="1" rule_flag="1" rule_value="1" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="17" level_1="A" level_2="A4" level_3="A4.2_30" rule_name="NumR_DIL_30"
+        data_record_id="" rule_flag="1" rule_value="86" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="18" level_1="A" level_2="A4" level_3="A4.2_180" rule_name="NumR_DIL_180"
+        data_record_id="" rule_flag="1" rule_value="86" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="19" level_1="A" level_2="A4" level_3="A4.2_120" rule_name="NumR_DIL_120"
+        data_record_id="" rule_flag="1" rule_value="86" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="20" level_1="A" level_2="A4" level_3="A4.2_60" rule_name="NumR_DIL_60"
+        data_record_id="" rule_flag="1" rule_value="86" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="21" level_1="I" level_2="I3" level_3="I3.1" rule_name="Num_cellph_SP_30"
+        data_record_id="1" rule_flag="1" rule_value="1" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="22" level_1="M" level_2="M23" level_3="M23.5" rule_name="NumCrdPhone_180"
+        data_record_id="1" rule_flag="1" rule_value="1" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="23" level_1="M" level_2="M23" level_3="M23.6" rule_name="NumCrdPhone_360"
+        data_record_id="1" rule_flag="1" rule_value="1" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="24" level_1="M" level_2="M23" level_3="M23.3" rule_name="NumCrdPhone_90"
+        data_record_id="1" rule_flag="1" rule_value="1" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="25" level_1="M" level_2="M21" level_3="" rule_name="cntcardusers"
+        data_record_id="47" rule_flag="1" rule_value="4" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="26" level_1="M" level_2="M23" level_3="M23.4" rule_name="NumCrdPhone_120"
+        data_record_id="1" rule_flag="1" rule_value="1" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="27" level_1="A" level_2="A4" level_3="A4.2_360" rule_name="NumR_DIL_360"
+        data_record_id="" rule_flag="1" rule_value="86" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="28" level_1="M" level_2="M23" level_3="M23.1" rule_name="NumCrdPhone_30"
+        data_record_id="1" rule_flag="1" rule_value="1" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="29" level_1="I" level_2="I3" level_3="" rule_name="Num_cellph_SP_all"
+        data_record_id="1" rule_flag="1" rule_value="1" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="30" level_1="M" level_2="M23" level_3="" rule_name="NumCrdPhone_all"
+        data_record_id="1" rule_flag="1" rule_value="1" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="31" level_1="A" level_2="A4" level_3="A4.2_90" rule_name="NumR_DIL_90"
+        data_record_id="" rule_flag="1" rule_value="86" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="32" level_1="A" level_2="A4" level_3="A4.2_all" rule_name="NumR_DIL_all"
+        data_record_id="" rule_flag="1" rule_value="86" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="33" level_1="M" level_2="M36" level_3="" rule_name="cntallcardsusers"
+        data_record_id="" rule_flag="1" rule_value="1" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="34" level_1="M" level_2="M1" level_3="" rule_name="cardFound"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="35" level_1="M" level_2="M11" level_3="" rule_name="lastSuccessfulDischargeDate"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="36" level_1="M" level_2="M8" level_3="" rule_name="lastSuccessfulDischargeAmount"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="37" level_1="M" level_2="M5" level_3="" rule_name="firstTransferFromMFODate"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="38" level_1="M" level_2="M4" level_3="" rule_name="countIssuedFor180Days"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="39" level_1="M" level_2="M2" level_3="" rule_name="countIssuedFor30Days"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="40" level_1="M" level_2="M19" level_3="" rule_name="mfoIssuedFor90Days"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="41" level_1="M" level_2="M18" level_3="" rule_name="mfoIssuedFor30Days"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="42" level_1="M" level_2="M16" level_3="" rule_name="totalRecurrentAmount"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="43" level_1="M" level_2="M15" level_3="" rule_name="totalIssuedAmount"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="44" level_1="M" level_2="M14" level_3="" rule_name="totalDischargeAmount"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="45" level_1="M" level_2="M13" level_3="" rule_name="mfoCountFor180Days"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="46" level_1="M" level_2="M12" level_3="" rule_name="mfoCountFor90Days"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="47" level_1="M" level_2="M3" level_3="" rule_name="countIssuedFor90Days"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="48" level_1="M" level_2="M11" level_3="" rule_name="mfoCountFor30Days"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="49" level_1="M" level_2="M10" level_3="" rule_name="lastTransferFromMFODate"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="50" level_1="M" level_2="M9" level_3="" rule_name="lastSuccessfulRecurrentAmount"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="51" level_1="M" level_2="M7" level_3="" rule_name="lastRecurrentAmount"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="52" level_1="M" level_2="M20" level_3="" rule_name="mfoIssuedFor180Days"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="53" level_1="M" level_2="M9" level_3="" rule_name="lastRecurrentDate"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="54" level_1="M" level_2="M17" level_3="" rule_name="transfersFromMFO"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="55" level_1="M" level_2="M7" level_3="" rule_name="lastDischargeDate"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="56" level_1="M" level_2="M6" level_3="" rule_name="lastDischargeAmount"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /><rule rule_id="57" level_1="M" level_2="M13" level_3="" rule_name="lastSuccessfulRecurrentDate"
+        data_record_id="47" rule_flag="0" rule_value="" rule_date="2017-11-23 00:00:00"
+        /></rules></person></response></file></results>
+    http_version: 
+  recorded_at: Thu, 23 Nov 2017 18:00:00 GMT
+recorded_with: VCR 3.0.3
